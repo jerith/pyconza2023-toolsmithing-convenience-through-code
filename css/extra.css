@@ -1,64 +1,55 @@
-/* section > h1, */
-/* section > h2, */
-/* section > h3, */
-/* section > h4 { */
-/*     width: 100%; */
-/*     position: fixed; */
-/*     top: 0; */
-/* } */
-
-/* .reveal h1, */
-/* .reveal h2, */
-/* .reveal h3, */
-/* .reveal h4 { */
-/*     width: 100%; */
-/*     position: fixed; */
-/*     top: 0; */
-/* } */
-
-/* .reveal.center .slides section div, */
-/* .reveal.center .slides section section div { */
-/*   min-height: 0!important */
-/* } */
-
-/* .center-xy { */
-/*     margin: 0; */
-/*     position: absolute; */
-/*     top: 100%; */
-/*     left: 50%; */
-/*     /\* -ms-transform: translateY(-50%), translateX(-50%); *\/ */
-/*     /\* transform: translateY(-50%), translateX(-50%); *\/ */
-/*     /\* translate: -50%, 50%; *\/ */
-/*     /\* transform: translateY(50%); *\/ */
-/*     transform: translate(-50%, -50%); */
-/* } */
+:root {
+    --r-background-color: #002b36;
+    --r-main-color: #93a1a1;
+    --r-heading-color: #eee8d5;
+}
 
 .v-center-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 540px;
+    /* height: 540px; */
+    height: 520px;
     flex-direction: column;
     /* flex-wrap: nowrap; */
     /* background-color: red; */
 }
 
-/* .reveal.center, */
-/* .reveal.center .slides, */
-/* .reveal.center .slides section { */
-/*     display: flex; */
-/*     justify-content: center; */
-/*     align-items: center; */
-/*     /\* height: 90%; *\/ */
-/*     height: 600px; */
-/*   /\* min-height: 0!important *\/ */
-/* } */
+pre code {
+    width: 110%;
+    border-radius: 7px;
+}
 
-/* section.v-center-container > h1, */
-/* section.v-center-container > h2, */
-/* section.v-center-container > h3, */
-/* section.v-center-container > h4 { */
-/*     width: 100%; */
-/*     position: fixed; */
-/*     top: 0; */
-/* } */
+pre code.text {
+    font-size: 90%;
+    line-height: 1;
+}
+
+del {
+    text-decoration-thickness: 3px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.reveal .fragment.fade-in-then-out-replace {
+  opacity: 0;
+  visibility: hidden;
+  display: inline;
+}
+
+.reveal .fragment.fade-in-replace {
+  opacity: 0;
+  visibility: hidden;
+  display: inline;
+}
+
+span.figure-number,
+span.figure-number + a {
+    font-size: 80%;
+}
+
+img {
+    transform: translateY(40px);
+}

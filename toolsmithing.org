@@ -45,13 +45,15 @@
 #+DATE: [2023-10-05]
 
 * What is toolsmithing?
+
 TODO
 
 * Why build tools?
 
+#+ATTR_REVEAL: :frag (t)
 - Save time
 - Reduce complexity
-- TODO!!!
+- TODO
 - It can be fun
 
 
@@ -63,7 +65,7 @@ We'll go through each of these in more detail.
 ** Save time
 
 #+CAPTION: https://xkcd.com/1205/
-#+ATTR_HTML: :width 45% :align center
+#+ATTR_HTML: :height 450px :align center
 [[./img/is_it_worth_the_time_2x.png]]
 
 #+BEGIN_NOTES
@@ -74,7 +76,7 @@ Automation tools can save you some time. Here's a handy chart from XKCD to help 
 ** Save time?
 
 #+CAPTION: https://xkcd.com/1319/
-#+ATTR_HTML: :width 45% :align center
+#+ATTR_HTML: :height 450px :align center
 [[./img/automation_2x.png]]
 
 #+BEGIN_NOTES
@@ -82,17 +84,65 @@ But of course, it's always more complicated.
 #+END_NOTES
 
 
+** Reduce complexity
+
+#+ATTR_REVEAL: :frag (t)
+- Get rid of boilerplate and defaults
+- Focus on the things you care about
+- TODO?
+
+
+#+BEGIN_NOTES
+Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
+Focus: Specify the things necessary for the app, let the robots do the rest.
+#+END_NOTES
+
+
+** Fun
+
+Happy people are productive people
+
+#+ATTR_REVEAL: :frag t
+We enjoy creative work, not tedious repetition
+
+#+ATTR_REVEAL: :frag t
+Toolsmithing is creative work that replaces tedious repetition
+
+
+* Examples
+
+- ~bigterm.sh~
+- ~kustom-tool~
+- ~filter_plan_2.py~
+- ~clothsim.py~
+
+#+BEGIN_NOTES
+~bigterm.sh~: I promised you a tiny shell script.
+~kustom-tool~: I promised you a moderately complex cluster configuration manager.
+~filter_plan_2.py~: An ugly hack that saved us hours of downtime.
+~clothsim.py~: An art project.
+#+END_NOTES
+
+
 * Example: ~bigterm.sh~
 
-- 80x25 isn't always enough.
-- But it's a pretty good default for me.
-- TODO
+#+ATTR_HTML: :style font-size: 150%;
+Makes my terminal big
+
+Why do I need a tool for this?
+
+#+ATTR_REVEAL: :frag (fade-in)
+- 80x25 isn't always enough
+- But it's a pretty good default for me
+- Manual resizing is inconsistent
+- Manual resizing is /annoying/
 
 
-** ~bigterm.sh~
+** ~bigterm.sh~ implementation
 
 Here's the code in its entirety:
 
+#+ATTR_REVEAL: :code_attribs data-line-numbers
 #+INCLUDE: "./code/bigterm.sh" src bash
 
 #+BEGIN_NOTES
@@ -100,3 +150,145 @@ This took me about 20 minutes, 19 of which was finding and reading the relevant 
 
 I didn't bother making it configurable or anything.
 #+END_NOTES
+
+
+* Example: ~kustom-tool~
+
+#+ATTR_HTML: :style font-size: 150%;
+Cluster configuration manager
+
+Why do we need a tool for this?
+
+#+ATTR_REVEAL: :frag (t)
+- Have you /seen/ k8s YAML‽
+- Deploying other people's stuff is boring
+  @@html:<span style="font-size:60%;">(and I don't want to do it)</span>@@
+- Waiting for me to deploy stuff is slow
+  @@html:<span style="font-size:60%;">(and they don't want to do it)</span>@@
+- Focus on what's important
+
+** ~kustom-tool~ requirements
+
+#+ATTR_HTML: :style font-size: 150%;
+What does this tool need to do?
+
+#+ATTR_REVEAL: :frag (t)
+- Static deploy manifests in the repo
+- Minimal boilerplate
+- Use upstream sources where practical
+- Reasonably fast
+
+#+BEGIN_NOTES
+- Static: What we see is what gets deployed.
+- Minimal: Get rid of all the irrelevant bits.
+- Upstream: We don't want to have to reinvent existing deployments.
+- Fast: Do things in parallel.
+#+END_NOTES
+
+** ~kustom-tool~ approach
+
+#+ATTR_HTML: :style font-size: 150%;
+How did we go about building it?
+
+#+ATTR_REVEAL: :frag (t)
+- Find existing tools we can use
+  - ~kustomize~, ~ytt~, ~helm~, etc.
+- Glue those tools together
+- Build the missing pieces
+
+** ~kustom-tool~ design
+
+Two stage operation:
+#+ATTR_REVEAL: :frag (t)
+- ~sources~: Fetch upstream sources
+  #+ATTR_REVEAL: :frag (t)
+  - k8s manifest, archive, git, helm chart, kustomize
+  - Fetches everything required to generate output
+  - Only required when sources have changed
+- ~regenerate~: Build deployment manifests
+  #+ATTR_REVEAL: :frag (t)
+  - Calls ~kustomize~ to build output
+  - ~kustomize~ plugin for ~ytt~
+
+#+BEGIN_NOTES
+- manifest, archive, git: Only fetch.
+- chart, kustomize: Call external tools.
+#+END_NOTES
+
+** ~kustom-tool~ implementation
+
+#+ATTR_REVEAL: :frag (t)
+- Python (obviously)
+- ~trio~ for concurrency
+- ~mypy~ and ~ruff~ to find most of the bugs
+- 2-3 months (part time) to build
+- It's "just worked" for so long I forgot everything else
+
+#+BEGIN_NOTES
+- trio: Because it has a sensible concurrency model
+- ruff: Best linter available
+#+END_NOTES
+
+
+** ~kustom-tool~ results
+
+#+ATTR_REVEAL: :frag (t)
+- Deploys take minutes to prepare instead of hours/days
+- Dev teams do 90% of the deploys themselves
+- No YAML-related injuries since 2021
+- External tools make setup somewhat annoying
+
+
+* Example: ~filter_plan_2.py~
+
+#+ATTR_HTML: :style font-size: 150%;
+Terraform plan filter
+
+Why do we need a tool for this?
+
+#+ATTR_REVEAL: :frag (t)
+- 8 k8s clusters to upgrade
+- Upstream module update with *lots* of changes
+- 1k+ lines of terraform plan
+- 100+ affected resources
+- At least one resource that *must* be fixed
+
+** ~filter_plan_2.py~ sample input
+
+#+ATTR_REVEAL: :code_attribs data-line-numbers="11" data-ln-start-from="1234"
+#+INCLUDE: "./code/tf-plan-snippet.txt" src text
+
+** ~filter_plan_2.py~ design
+
+Meh, who has time to design this
+
+#+ATTR_REVEAL: :frag t
+It's just a bunch of substring matches, right?
+
+** ~filter_plan_2.py~ implementation
+
+#+ATTR_REVEAL: :frag (t)
+- Basically just a bunch of substring matches
+- Grouped into sections:
+  #+ATTR_REVEAL: :frag (t)
+  - EXPECTED: Displayed for completeness
+  - UNEXPECTED: Check these to make sure they're okay
+  - WARN: Things that need manual fixing
+- 200 lines of very hacky code, no tests, no repo
+
+** ~filter_plan_2.py~ results
+
+#+ATTR_REVEAL: :frag (t)
+- No clusters were harmed during the upgrades
+- (At least, not from anything related to this)
+- Spent a couple of hours working on a better version
+  - Configuration was messy and difficult
+  - Not worth the effort, make a new one next time
+
+* Example: ~clothsim.py~
+
+TODO
+
+** ~clothsim.py~ design
+
+TODO

@@ -1,0 +1,16 @@
+  # module.cluster.aws_elasticache_cluster.redis["app-redis"] will be updated in-place
+  ~ resource "aws_elasticache_cluster" "redis" {
+        id                         = "app-redis"
+      ~ security_group_ids         = [
+          - "sg-03fbe4e8047f95e56",
+        ] -> (known after apply)
+        tags                       = {}
+        # (21 unchanged attributes hidden)
+    }
+
+  # module.cluster.module.eks.kubernetes_config_map.aws_auth[0] will be destroyed
+  # (because index [0] is out of range for count)
+  - resource "kubernetes_config_map" "aws_auth" {
+      - binary_data = {} -> null
+      - data        = {
+          - "mapAccounts" = jsonencode([])

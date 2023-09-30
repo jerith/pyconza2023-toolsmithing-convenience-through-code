@@ -27,43 +27,10 @@
 <h3 class="date">PyConZA: 6 October, 2023</h2>
 </section>
 
+
 <section>
-<section id="slide-orgdd0e727">
-<h2 id="orgdd0e727"><code>bigterm.sh</code></h2>
-<div class="v-center-container">
-<p>
-Here's the code in its entirety:
-</p>
-
-<div class="org-src-container">
-
-<pre   ><code class="bash" >#!/bin/bash
-
-# See the CSI section at https://www.xfree86.org/current/ctlseqs.html
-
-printf '\e[8;50;195t'  # resize to 195x50 characters
-printf '\e[3;200;0t'   # move to position (200, 0) pixels
-</code></pre>
-</div>
-
-<aside class="notes">
-<p>
-This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
-</p>
-
-<p>
-I didn't bother making it configurable or anything.
-</p>
-
-</aside>
-
-</div>
-
-</section>
-</section>
-<section>
-<section id="slide-orgef49a1e">
-<h2 id="orgef49a1e">What is toolsmithing?</h2>
+<section id="slide-org913b87c">
+<h2 id="org913b87c">What is toolsmithing?</h2>
 <div class="v-center-container">
 <p>
 TODO
@@ -74,14 +41,14 @@ TODO
 </section>
 </section>
 <section>
-<section id="slide-orgcf9ed61">
-<h2 id="orgcf9ed61">Why build tools?</h2>
+<section id="slide-org4aaa71a">
+<h2 id="org4aaa71a">Why build tools?</h2>
 <div class="v-center-container">
 <ul>
-<li>Save time</li>
-<li>Reduce complexity</li>
-<li>TODO!!!</li>
-<li>It can be fun</li>
+<li class="fragment">Save time</li>
+<li class="fragment">Reduce complexity</li>
+<li class="fragment">TODO</li>
+<li class="fragment">It can be fun</li>
 
 </ul>
 
@@ -95,12 +62,12 @@ We'll go through each of these in more detail.
 
 
 </div></section>
-<section id="slide-org1a72fd9">
-<h3 id="org1a72fd9">Save time</h3>
+<section id="slide-org49881d2">
+<h3 id="org49881d2">Save time</h3>
 <div class="v-center-container">
 
-<div id="orga723a17" class="figure">
-<p><img src="./img/is_it_worth_the_time_2x.png" alt="is_it_worth_the_time_2x.png" width="45%" align="center" />
+<div id="orgdba4a87" class="figure">
+<p><img src="./img/is_it_worth_the_time_2x.png" alt="is_it_worth_the_time_2x.png" height="450px" align="center" />
 </p>
 <p><span class="figure-number">Figure 1: </span><a href="https://xkcd.com/1205/">https://xkcd.com/1205/</a></p>
 </div>
@@ -117,12 +84,12 @@ Automation tools can save you some time. Here's a handy chart from XKCD to help 
 
 
 </section>
-<section id="slide-orgf228ae7">
-<h3 id="orgf228ae7">Save time?</h3>
+<section id="slide-org025b02c">
+<h3 id="org025b02c">Save time?</h3>
 <div class="v-center-container">
 
-<div id="org2ebad42" class="figure">
-<p><img src="./img/automation_2x.png" alt="automation_2x.png" width="45%" align="center" />
+<div id="org08c1028" class="figure">
+<p><img src="./img/automation_2x.png" alt="automation_2x.png" height="450px" align="center" />
 </p>
 <p><span class="figure-number">Figure 2: </span><a href="https://xkcd.com/1319/">https://xkcd.com/1319/</a></p>
 </div>
@@ -139,22 +106,103 @@ But of course, it's always more complicated.
 
 
 </section>
-</section>
-<section>
-<section id="slide-org4c55302">
-<h2 id="org4c55302">Example: <code>bigterm.sh</code></h2>
+<section id="slide-org6e48130">
+<h3 id="org6e48130">Reduce complexity</h3>
 <div class="v-center-container">
 <ul>
-<li>80x25 isn't always enough.</li>
-<li>But it's a pretty good default for me.</li>
-<li>TODO</li>
+<li class="fragment">Get rid of boilerplate and defaults</li>
+<li class="fragment">Focus on the things you care about</li>
+<li class="fragment">TODO?</li>
+
+</ul>
+
+
+<aside class="notes">
+<p>
+Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
+Focus: Specify the things necessary for the app, let the robots do the rest.
+</p>
+
+</aside>
+
+
+</div>
+
+
+</section>
+<section id="slide-org22578ea">
+<h3 id="org22578ea">Fun</h3>
+<div class="v-center-container">
+<p>
+Happy people are productive people
+</p>
+
+<p class="fragment">
+We enjoy creative work, not tedious repetition
+</p>
+
+<p class="fragment">
+Toolsmithing is creative work that replaces tedious repetition
+</p>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org93d04c5">
+<h2 id="org93d04c5">Examples</h2>
+<div class="v-center-container">
+<ul>
+<li><code>bigterm.sh</code></li>
+<li><code>kustom-tool</code></li>
+<li><code>filter_plan_2.py</code></li>
+<li><code>clothsim.py</code></li>
+
+</ul>
+
+<aside class="notes">
+<p>
+<code>bigterm.sh</code>: I promised you a tiny shell script.
+<code>kustom-tool</code>: I promised you a moderately complex cluster configuration manager.
+<code>filter_plan_2.py</code>: An ugly hack that saved us hours of downtime.
+<code>clothsim.py</code>: An art project.
+</p>
+
+</aside>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgec2d113">
+<h2 id="orgec2d113">Example: <code>bigterm.sh</code></h2>
+<div class="v-center-container">
+<p>
+Makes my terminal big
+</p>
+
+<p style="font-size: 150%;">
+Why do I need a tool for this?
+</p>
+
+<ul>
+<li class="fragment fade-in">80x25 isn't always enough</li>
+<li class="fragment fade-in">But it's a pretty good default for me</li>
+<li class="fragment fade-in">Manual resizing is inconsistent</li>
+<li class="fragment fade-in">Manual resizing is <i>annoying</i></li>
 
 </ul>
 
 
 </div></section>
-<section id="slide-orgd55ee47">
-<h3 id="orgd55ee47"><code>bigterm.sh</code></h3>
+<section id="slide-org6b05e6c">
+<h3 id="org6b05e6c"><code>bigterm.sh</code> implementation</h3>
 <div class="v-center-container">
 <p>
 Here's the code in its entirety:
@@ -162,7 +210,7 @@ Here's the code in its entirety:
 
 <div class="org-src-container">
 
-<pre   ><code class="bash" >#!/bin/bash
+<pre   ><code class="bash" data-line-numbers>#!/bin/bash
 
 # See the CSI section at https://www.xfree86.org/current/ctlseqs.html
 
@@ -181,6 +229,251 @@ I didn't bother making it configurable or anything.
 </p>
 
 </aside>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgec67910">
+<h2 id="orgec67910">Example: <code>kustom-tool</code></h2>
+<div class="v-center-container">
+<p style="font-size: 150%;">
+Cluster configuration manager
+</p>
+
+<p>
+Why do we need a tool for this?
+</p>
+
+<ul>
+<li class="fragment">Have you <i>seen</i> k8s YAML‽</li>
+<li class="fragment">Deploying other people's stuff is boring
+<span style="font-size:60%;">(and I don't want to do it)</span></li>
+<li class="fragment">Waiting for me to deploy stuff is slow
+<span style="font-size:60%;">(and they don't want to do it)</span></li>
+<li class="fragment">Focus on what's important</li>
+
+</ul>
+
+</div></section>
+<section id="slide-orgf9460a5">
+<h3 id="orgf9460a5"><code>kustom-tool</code> requirements</h3>
+<div class="v-center-container">
+<p style="font-size: 150%;">
+What does this tool need to do?
+</p>
+
+<ul>
+<li class="fragment">Static deploy manifests in the repo</li>
+<li class="fragment">Minimal boilerplate</li>
+<li class="fragment">Use upstream sources where practical</li>
+<li class="fragment">Reasonably fast</li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li>Static: What we see is what gets deployed.</li>
+<li>Minimal: Get rid of all the irrelevant bits.</li>
+<li>Upstream: We don't want to have to reinvent existing deployments.</li>
+<li>Fast: Do things in parallel.</li>
+
+</ul>
+
+</aside>
+
+</div>
+
+</section>
+<section id="slide-orga4ecf01">
+<h3 id="orga4ecf01"><code>kustom-tool</code> approach</h3>
+<div class="v-center-container">
+<p style="font-size: 150%;">
+How did we go about building it?
+</p>
+
+<ul>
+<li class="fragment">Find existing tools we can use
+<ul>
+<li><code>kustomize</code>, <code>ytt</code>, <code>helm</code>, etc.</li>
+
+</ul></li>
+<li class="fragment">Glue those tools together</li>
+<li class="fragment">Build the missing pieces</li>
+
+</ul>
+
+</div>
+
+</section>
+<section id="slide-org69f3b43">
+<h3 id="org69f3b43"><code>kustom-tool</code> design</h3>
+<div class="v-center-container">
+<p>
+Two stage operation:
+</p>
+<ul>
+<li class="fragment"><code>sources</code>: Fetch upstream sources
+<ul>
+<li class="fragment">k8s manifest, archive, git, helm chart, kustomize</li>
+<li class="fragment">Fetches everything required to generate output</li>
+<li class="fragment">Only required when sources have changed</li>
+
+</ul></li>
+<li class="fragment"><code>regenerate</code>: Build deployment manifests
+<ul>
+<li class="fragment">Calls <code>kustomize</code> to build output</li>
+<li class="fragment"><code>kustomize</code> plugin for <code>ytt</code></li>
+
+</ul></li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li>manifest, archive, git: Only fetch.</li>
+<li>chart, kustomize: Call external tools.</li>
+
+</ul>
+
+</aside>
+
+</div>
+
+</section>
+<section id="slide-org102ee29">
+<h3 id="org102ee29"><code>kustom-tool</code> implementation</h3>
+<div class="v-center-container">
+<ul>
+<li class="fragment">Python (obviously)</li>
+<li class="fragment"><code>trio</code> for concurrency</li>
+<li class="fragment"><code>mypy</code> and <code>ruff</code> to find most of the bugs</li>
+<li class="fragment">2-3 months (part time) to build</li>
+<li class="fragment">It's "just worked" for so long I forgot everything else</li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li>trio: Because it has a sensible concurrency model</li>
+<li>ruff: Best linter available</li>
+
+</ul>
+
+</aside>
+
+
+</div>
+
+
+</section>
+<section id="slide-org6d34b87">
+<h3 id="org6d34b87"><code>kustom-tool</code> results</h3>
+<div class="v-center-container">
+<ul>
+<li class="fragment">Deploys take minutes to prepare instead of hours/days</li>
+<li class="fragment">Dev teams do 90% of the deploys themselves</li>
+<li class="fragment">No YAML-related injuries since 2021</li>
+<li class="fragment">External tools make setup somewhat annoying</li>
+
+</ul>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orga43c55a">
+<h2 id="orga43c55a">Example: <code>filter_plan_2.py</code></h2>
+<div class="v-center-container">
+<p style="font-size: 150%;">
+Terraform plan filter
+</p>
+
+<p>
+Why do we need a tool for this?
+</p>
+
+<ul>
+<li class="fragment">8 k8s clusters to upgrade</li>
+<li class="fragment">Upstream module update with <b>lots</b> of changes</li>
+<li class="fragment">1k+ lines of terraform plan</li>
+<li class="fragment">100+ affected resources</li>
+<li class="fragment">At least one resource that <b>must</b> be fixed</li>
+
+</ul>
+
+</div></section>
+<section id="slide-org0df43ac">
+<h3 id="org0df43ac"><code>filter_plan_2.py</code> sample input</h3>
+<div class="v-center-container">
+<div class="org-src-container">
+
+<pre   ><code class="text" data-line-numbers="11" data-ln-start-from="1234"># module.cluster.aws_elasticache_cluster.redis["app-redis"] will be updated in-place
+~ resource "aws_elasticache_cluster" "redis" {
+      id                         = "app-redis"
+    ~ security_group_ids         = [
+        - "sg-03fbe4e8047f95e56",
+      ] -&gt; (known after apply)
+      tags                       = {}
+      # (21 unchanged attributes hidden)
+  }
+
+# module.cluster.module.eks.kubernetes_config_map.aws_auth[0] will be destroyed
+# (because index [0] is out of range for count)
+- resource "kubernetes_config_map" "aws_auth" {
+    - binary_data = {} -&gt; null
+    - data        = {
+        - "mapAccounts" = jsonencode([])
+</code></pre>
+</div>
+
+</div>
+
+</section>
+<section id="slide-org2d4a246">
+<h3 id="org2d4a246"><code>filter_plan_2.py</code> design</h3>
+<div class="v-center-container">
+<p>
+Meh, who has time to design this
+</p>
+
+</div>
+
+</section>
+<section id="slide-org48cbae9">
+<h3 id="org48cbae9"><code>filter_plan_2.py</code> implementation</h3>
+<div class="v-center-container">
+<p>
+Meh, who has time to design this
+</p>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org9ef9513">
+<h2 id="org9ef9513">Example: <code>clothsim.py</code></h2>
+<div class="v-center-container">
+<p>
+TODO
+</p>
+
+</div></section>
+<section id="slide-org97939bc">
+<h3 id="org97939bc"><code>clothsim.py</code> design</h3>
+<div class="v-center-container">
+<p>
+TODO
+</p>
 </div>
 </section>
 </section>
