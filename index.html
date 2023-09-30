@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Toolsmithing</title>
+<meta name="author" content="Jeremy Thurgood"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="./css/extra.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Toolsmithing</h1>
+<h3 class="subtitle">convenience through code</h3>
+<br/>
+<h2 class="author">Jeremy Thurgood</h2>
+<br/>
+<h3 class="date">PyConZA: 6 October, 2023</h2>
+</section>
+
+<section>
+<section id="slide-orgdd0e727">
+<h2 id="orgdd0e727"><code>bigterm.sh</code></h2>
+<div class="v-center-container">
+<p>
+Here's the code in its entirety:
+</p>
+
+<div class="org-src-container">
+
+<pre   ><code class="bash" >#!/bin/bash
+
+# See the CSI section at https://www.xfree86.org/current/ctlseqs.html
+
+printf '\e[8;50;195t'  # resize to 195x50 characters
+printf '\e[3;200;0t'   # move to position (200, 0) pixels
+</code></pre>
+</div>
+
+<aside class="notes">
+<p>
+This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
+</p>
+
+<p>
+I didn't bother making it configurable or anything.
+</p>
+
+</aside>
+
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgef49a1e">
+<h2 id="orgef49a1e">What is toolsmithing?</h2>
+<div class="v-center-container">
+<p>
+TODO
+</p>
+
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcf9ed61">
+<h2 id="orgcf9ed61">Why build tools?</h2>
+<div class="v-center-container">
+<ul>
+<li>Save time</li>
+<li>Reduce complexity</li>
+<li>TODO!!!</li>
+<li>It can be fun</li>
+
+</ul>
+
+
+<aside class="notes">
+<p>
+We'll go through each of these in more detail.
+</p>
+
+</aside>
+
+
+</div></section>
+<section id="slide-org1a72fd9">
+<h3 id="org1a72fd9">Save time</h3>
+<div class="v-center-container">
+
+<div id="orga723a17" class="figure">
+<p><img src="./img/is_it_worth_the_time_2x.png" alt="is_it_worth_the_time_2x.png" width="45%" align="center" />
+</p>
+<p><span class="figure-number">Figure 1: </span><a href="https://xkcd.com/1205/">https://xkcd.com/1205/</a></p>
+</div>
+
+<aside class="notes">
+<p>
+Automation tools can save you some time. Here's a handy chart from XKCD to help you decide if it's worth it.
+</p>
+
+</aside>
+
+
+</div>
+
+
+</section>
+<section id="slide-orgf228ae7">
+<h3 id="orgf228ae7">Save time?</h3>
+<div class="v-center-container">
+
+<div id="org2ebad42" class="figure">
+<p><img src="./img/automation_2x.png" alt="automation_2x.png" width="45%" align="center" />
+</p>
+<p><span class="figure-number">Figure 2: </span><a href="https://xkcd.com/1319/">https://xkcd.com/1319/</a></p>
+</div>
+
+<aside class="notes">
+<p>
+But of course, it's always more complicated.
+</p>
+
+</aside>
+
+
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org4c55302">
+<h2 id="org4c55302">Example: <code>bigterm.sh</code></h2>
+<div class="v-center-container">
+<ul>
+<li>80x25 isn't always enough.</li>
+<li>But it's a pretty good default for me.</li>
+<li>TODO</li>
+
+</ul>
+
+
+</div></section>
+<section id="slide-orgd55ee47">
+<h3 id="orgd55ee47"><code>bigterm.sh</code></h3>
+<div class="v-center-container">
+<p>
+Here's the code in its entirety:
+</p>
+
+<div class="org-src-container">
+
+<pre   ><code class="bash" >#!/bin/bash
+
+# See the CSI section at https://www.xfree86.org/current/ctlseqs.html
+
+printf '\e[8;50;195t'  # resize to 195x50 characters
+printf '\e[3;200;0t'   # move to position (200, 0) pixels
+</code></pre>
+</div>
+
+<aside class="notes">
+<p>
+This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
+</p>
+
+<p>
+I didn't bother making it configurable or anything.
+</p>
+
+</aside>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealNotes],
+width: 1280, height: 720,
+controlsTutorial: false,
+slideNumber: "c/t",
+center: false,
+});
+
+</script>
+</body>
+</html>

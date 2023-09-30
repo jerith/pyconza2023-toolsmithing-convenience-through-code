@@ -1,0 +1,64 @@
+/* section > h1, */
+/* section > h2, */
+/* section > h3, */
+/* section > h4 { */
+/*     width: 100%; */
+/*     position: fixed; */
+/*     top: 0; */
+/* } */
+
+/* .reveal h1, */
+/* .reveal h2, */
+/* .reveal h3, */
+/* .reveal h4 { */
+/*     width: 100%; */
+/*     position: fixed; */
+/*     top: 0; */
+/* } */
+
+/* .reveal.center .slides section div, */
+/* .reveal.center .slides section section div { */
+/*   min-height: 0!important */
+/* } */
+
+/* .center-xy { */
+/*     margin: 0; */
+/*     position: absolute; */
+/*     top: 100%; */
+/*     left: 50%; */
+/*     /\* -ms-transform: translateY(-50%), translateX(-50%); *\/ */
+/*     /\* transform: translateY(-50%), translateX(-50%); *\/ */
+/*     /\* translate: -50%, 50%; *\/ */
+/*     /\* transform: translateY(50%); *\/ */
+/*     transform: translate(-50%, -50%); */
+/* } */
+
+.v-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 540px;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    /* background-color: red; */
+}
+
+/* .reveal.center, */
+/* .reveal.center .slides, */
+/* .reveal.center .slides section { */
+/*     display: flex; */
+/*     justify-content: center; */
+/*     align-items: center; */
+/*     /\* height: 90%; *\/ */
+/*     height: 600px; */
+/*   /\* min-height: 0!important *\/ */
+/* } */
+
+/* section.v-center-container > h1, */
+/* section.v-center-container > h2, */
+/* section.v-center-container > h3, */
+/* section.v-center-container > h4 { */
+/*     width: 100%; */
+/*     position: fixed; */
+/*     top: 0; */
+/* } */

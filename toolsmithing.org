@@ -1,0 +1,102 @@
+# -*- mode: Org; org-confirm-babel-evaluate: nil; -*-
+:REVEAL_PROPERTIES:
+#+EXPORT_FILE_NAME: index.html
+
+# Set this for a standalone hosted version.
+# #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@4.6.0
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_PLUGINS: (highlight notes)
+#+REVEAL_THEME: night
+
+#+REVEAL_EXTRA_CSS: ./css/extra.css
+
+# #+REVEAL_INIT_OPTIONS: width: 1152, height: 840,
+#+REVEAL_INIT_OPTIONS: width: 1280, height: 720,
+#+REVEAL_INIT_OPTIONS: controlsTutorial: false,
+#+REVEAL_INIT_OPTIONS: slideNumber: "c/t",
+# #+REVEAL_INIT_OPTIONS: transition: "fade",
+# #+REVEAL_INIT_OPTIONS: transition: "linear",
+#+REVEAL_INIT_OPTIONS: center: false,
+
+#+OPTIONS: timestamp:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+
+#+REVEAL_TITLE_SLIDE:
+#+REVEAL_TITLE_SLIDE: <h1 class="title">%t</h1>
+#+REVEAL_TITLE_SLIDE: <h3 class="subtitle">%s</h3>
+#+REVEAL_TITLE_SLIDE: <br/>
+#+REVEAL_TITLE_SLIDE: <h2 class="author">%a</h2>
+#+REVEAL_TITLE_SLIDE: <br/>
+#+REVEAL_TITLE_SLIDE: <h3 class="date">PyConZA: 6 October, 2023</h2>
+
+#+BIND: org-export-filter-section-functions (jerith/vcenter-slide-content)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun jerith/vcenter-slide-content (s backend info)
+    (if (string-match-p "\\S-" s)
+        (concat "<div class=\"v-center-container\">\n" s "</div>")
+      s))
+#+END_SRC
+:END:
+
+#+TITLE: Toolsmithing
+#+SUBTITLE: convenience through code
+#+AUTHOR: Jeremy Thurgood
+#+DATE: [2023-10-05]
+
+* What is toolsmithing?
+TODO
+
+* Why build tools?
+
+- Save time
+- Reduce complexity
+- TODO!!!
+- It can be fun
+
+
+#+BEGIN_NOTES
+We'll go through each of these in more detail.
+#+END_NOTES
+
+
+** Save time
+
+#+CAPTION: https://xkcd.com/1205/
+#+ATTR_HTML: :width 45% :align center
+[[./img/is_it_worth_the_time_2x.png]]
+
+#+BEGIN_NOTES
+Automation tools can save you some time. Here's a handy chart from XKCD to help you decide if it's worth it.
+#+END_NOTES
+
+
+** Save time?
+
+#+CAPTION: https://xkcd.com/1319/
+#+ATTR_HTML: :width 45% :align center
+[[./img/automation_2x.png]]
+
+#+BEGIN_NOTES
+But of course, it's always more complicated.
+#+END_NOTES
+
+
+* Example: ~bigterm.sh~
+
+- 80x25 isn't always enough.
+- But it's a pretty good default for me.
+- TODO
+
+
+** ~bigterm.sh~
+
+Here's the code in its entirety:
+
+#+INCLUDE: "./code/bigterm.sh" src bash
+
+#+BEGIN_NOTES
+This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
+
+I didn't bother making it configurable or anything.
+#+END_NOTES
