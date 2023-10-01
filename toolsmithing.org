@@ -44,11 +44,14 @@
 #+AUTHOR: Jeremy Thurgood
 #+DATE: [2023-10-05]
 
-* What is toolsmithing?
+* What is a toolsmith?
 
-TODO
+#+ATTR_HTML: :style font-size: 150%;
+A person who makes tools
 
-* Why build tools?
+More specifically, in the context of this presentation, a toolsmith builds tools to improve make their own work, and that of their colleagues, easier TODO
+
+** Why build tools?
 
 #+ATTR_REVEAL: :frag (t)
 - Save time
@@ -61,7 +64,6 @@ TODO
 We'll go through each of these in more detail.
 #+END_NOTES
 
-
 ** Save time
 
 #+CAPTION: https://xkcd.com/1205/
@@ -72,7 +74,6 @@ We'll go through each of these in more detail.
 Automation tools can save you some time. Here's a handy chart from XKCD to help you decide if it's worth it.
 #+END_NOTES
 
-
 ** Save time?
 
 #+CAPTION: https://xkcd.com/1319/
@@ -82,7 +83,6 @@ Automation tools can save you some time. Here's a handy chart from XKCD to help 
 #+BEGIN_NOTES
 But of course, it's always more complicated.
 #+END_NOTES
-
 
 ** Reduce complexity
 
@@ -96,7 +96,6 @@ But of course, it's always more complicated.
 Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
 Focus: Specify the things necessary for the app, let the robots do the rest.
 #+END_NOTES
-
 
 ** Fun
 
@@ -124,11 +123,14 @@ Toolsmithing is creative work that replaces tedious repetition
 #+END_NOTES
 
 
-* Example: ~bigterm.sh~
+* ~bigterm.sh~
 
 #+ATTR_HTML: :style font-size: 150%;
 Makes my terminal big
 
+** ~bigterm.sh~: problem
+
+#+ATTR_HTML: :style font-size: 150%;
 Why do I need a tool for this?
 
 #+ATTR_REVEAL: :frag (fade-in)
@@ -137,8 +139,7 @@ Why do I need a tool for this?
 - Manual resizing is inconsistent
 - Manual resizing is /annoying/
 
-
-** ~bigterm.sh~ implementation
+** ~bigterm.sh~: implementation
 
 Here's the code in its entirety:
 
@@ -152,11 +153,14 @@ I didn't bother making it configurable or anything.
 #+END_NOTES
 
 
-* Example: ~kustom-tool~
+* ~kustom-tool~
 
 #+ATTR_HTML: :style font-size: 150%;
 Cluster configuration manager
 
+** ~kustom-tool~: problem
+
+#+ATTR_HTML: :style font-size: 150%;
 Why do we need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
@@ -167,7 +171,7 @@ Why do we need a tool for this?
   @@html:<span style="font-size:60%;">(and they don't want to do it)</span>@@
 - Focus on what's important
 
-** ~kustom-tool~ requirements
+** ~kustom-tool~: requirements
 
 #+ATTR_HTML: :style font-size: 150%;
 What does this tool need to do?
@@ -185,7 +189,7 @@ What does this tool need to do?
 - Fast: Do things in parallel.
 #+END_NOTES
 
-** ~kustom-tool~ approach
+** ~kustom-tool~: approach
 
 #+ATTR_HTML: :style font-size: 150%;
 How did we go about building it?
@@ -196,7 +200,7 @@ How did we go about building it?
 - Glue those tools together
 - Build the missing pieces
 
-** ~kustom-tool~ design
+** ~kustom-tool~: design
 
 Two stage operation:
 #+ATTR_REVEAL: :frag (t)
@@ -215,7 +219,7 @@ Two stage operation:
 - chart, kustomize: Call external tools.
 #+END_NOTES
 
-** ~kustom-tool~ implementation
+** ~kustom-tool~: implementation
 
 #+ATTR_REVEAL: :frag (t)
 - Python (obviously)
@@ -229,8 +233,7 @@ Two stage operation:
 - ruff: Best linter available
 #+END_NOTES
 
-
-** ~kustom-tool~ results
+** ~kustom-tool~: results
 
 #+ATTR_REVEAL: :frag (t)
 - Deploys take minutes to prepare instead of hours/days
@@ -239,11 +242,14 @@ Two stage operation:
 - External tools make setup somewhat annoying
 
 
-* Example: ~filter_plan_2.py~
+* ~filter_plan_2.py~
 
 #+ATTR_HTML: :style font-size: 150%;
 Terraform plan filter
 
+** ~filter_plan_2.py~: problem
+
+#+ATTR_HTML: :style font-size: 150%;
 Why do we need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
@@ -253,19 +259,19 @@ Why do we need a tool for this?
 - 100+ affected resources
 - At least one resource that *must* be fixed
 
-** ~filter_plan_2.py~ sample input
+** ~filter_plan_2.py~: sample input
 
 #+ATTR_REVEAL: :code_attribs data-line-numbers="11" data-ln-start-from="1234"
 #+INCLUDE: "./code/tf-plan-snippet.txt" src text
 
-** ~filter_plan_2.py~ design
+** ~filter_plan_2.py~: design
 
-Meh, who has time to design this
+Meh, who has time to design something like this
 
 #+ATTR_REVEAL: :frag t
 It's just a bunch of substring matches, right?
 
-** ~filter_plan_2.py~ implementation
+** ~filter_plan_2.py~: implementation
 
 #+ATTR_REVEAL: :frag (t)
 - Basically just a bunch of substring matches
@@ -276,7 +282,7 @@ It's just a bunch of substring matches, right?
   - WARN: Things that need manual fixing
 - 200 lines of very hacky code, no tests, no repo
 
-** ~filter_plan_2.py~ results
+** ~filter_plan_2.py~: results
 
 #+ATTR_REVEAL: :frag (t)
 - No clusters were harmed during the upgrades
@@ -285,10 +291,30 @@ It's just a bunch of substring matches, right?
   - Configuration was messy and difficult
   - Not worth the effort, make a new one next time
 
-* Example: ~clothsim.py~
+
+* ~clothsim.py~
+
+#+ATTR_HTML: :style font-size: 150%;
+Blender cloth simulation wrangler
+
+** ~clothsim.py~: problem
+
+#+ATTR_HTML: :style font-size: 150%;
+Why do we need a tool for this?
+
+#+ATTR_REVEAL: :frag (t)
+- 8 k8s clusters to upgrade
+- Upstream module update with *lots* of changes
+- 1k+ lines of terraform plan
+- 100+ affected resources
+- At least one resource that *must* be fixed
+
+
+#+ATTR_HTML: :style font-size: 150%;
+Why do I need a tool for this?
 
 TODO
 
-** ~clothsim.py~ design
+** ~clothsim.py~: design
 
 TODO
