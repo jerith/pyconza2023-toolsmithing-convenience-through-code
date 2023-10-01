@@ -46,28 +46,33 @@
 
 * What is a toolsmith?
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 A person who makes tools
 
-More specifically, in the context of this presentation, a toolsmith builds tools to improve make their own work, and that of their colleagues, easier TODO
+#+ATTR_REVEAL: :frag t
+More specifically, in the context of this presentation:\\
+toolsmiths build tools to improve their own productivity,\\
+and that of their friends and colleagues.
 
 ** Why build tools?
 
 #+ATTR_REVEAL: :frag (t)
 - Save time
 - Reduce complexity
-- TODO
-- It can be fun
-
+- Existing tools don't fit
+- It's fun
 
 #+BEGIN_NOTES
 We'll go through each of these in more detail.
 #+END_NOTES
 
 ** Save time
+:PROPERTIES:
+:REVEAL_DATA_TRANSITION: slide-in fade-out
+:END:
 
 #+CAPTION: https://xkcd.com/1205/
-#+ATTR_HTML: :height 450px :align center
+#+ATTR_HTML: :height 500px :align center
 [[./img/is_it_worth_the_time_2x.png]]
 
 #+BEGIN_NOTES
@@ -75,9 +80,12 @@ Automation tools can save you some time. Here's a handy chart from XKCD to help 
 #+END_NOTES
 
 ** Save time?
+:PROPERTIES:
+:REVEAL_DATA_TRANSITION: fade-in slide-out
+:END:
 
 #+CAPTION: https://xkcd.com/1319/
-#+ATTR_HTML: :height 450px :align center
+#+ATTR_HTML: :height 500px :align center
 [[./img/automation_2x.png]]
 
 #+BEGIN_NOTES
@@ -86,19 +94,36 @@ But of course, it's always more complicated.
 
 ** Reduce complexity
 
-#+ATTR_REVEAL: :frag (t)
-- Get rid of boilerplate and defaults
-- Focus on the things you care about
-- TODO?
+#+ATTR_HTML: :class heading
+Simple is better than complex
 
+#+ATTR_REVEAL: :frag (t)
+- Get rid of boilerplate
+- Focus on the things you care about
+- Remove sources of error
 
 #+BEGIN_NOTES
-Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
-Focus: Specify the things necessary for the app, let the robots do the rest.
+- Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
+- Focus: Specify the things necessary for the app, let the robots do the rest.
+- Errors: If you only need three parameters, don't expose the other seventeen.
 #+END_NOTES
+
+** Existing tools
+
+#+ATTR_HTML: :class heading
+The world is full of tools
+
+Usually you can find one to meet your needs
+
+#+ATTR_REVEAL: :frag t
+Maybe you can get by with one that doesn't quite fit
+
+#+ATTR_REVEAL: :frag t
+Or you can build your own
 
 ** Fun
 
+#+ATTR_HTML: :class heading
 Happy people are productive people
 
 #+ATTR_REVEAL: :frag t
@@ -109,6 +134,9 @@ Toolsmithing is creative work that replaces tedious repetition
 
 
 * Examples
+
+#+ATTR_HTML: :class heading
+Some tools I've built recently
 
 - ~bigterm.sh~
 - ~kustom-tool~
@@ -125,12 +153,12 @@ Toolsmithing is creative work that replaces tedious repetition
 
 * ~bigterm.sh~
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Makes my terminal big
 
-** ~bigterm.sh~: problem
+** ~bigterm.sh~ » problem
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Why do I need a tool for this?
 
 #+ATTR_REVEAL: :frag (fade-in)
@@ -139,7 +167,7 @@ Why do I need a tool for this?
 - Manual resizing is inconsistent
 - Manual resizing is /annoying/
 
-** ~bigterm.sh~: implementation
+** ~bigterm.sh~ » implementation
 
 Here's the code in its entirety:
 
@@ -147,20 +175,28 @@ Here's the code in its entirety:
 #+INCLUDE: "./code/bigterm.sh" src bash
 
 #+BEGIN_NOTES
-This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
-
-I didn't bother making it configurable or anything.
+- Took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
+- I didn't bother making it configurable or anything.
 #+END_NOTES
 
+** ~bigterm.sh~ » results
+
+#+ATTR_HTML: :class heading
+How did it work out for me?
+
+#+ATTR_REVEAL: :frag (t)
+- I only ever notice it on computers that don't have it
+- Six point three bazillion context switches avoided
+- Paid for itself in happiness the first time I used it
 
 * ~kustom-tool~
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Cluster configuration manager
 
-** ~kustom-tool~: problem
+** ~kustom-tool~ » problem
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Why do we need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
@@ -171,9 +207,9 @@ Why do we need a tool for this?
   @@html:<span style="font-size:60%;">(and they don't want to do it)</span>@@
 - Focus on what's important
 
-** ~kustom-tool~: requirements
+** ~kustom-tool~ » requirements
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 What does this tool need to do?
 
 #+ATTR_REVEAL: :frag (t)
@@ -183,24 +219,24 @@ What does this tool need to do?
 - Reasonably fast
 
 #+BEGIN_NOTES
-- Static: What we see is what gets deployed.
+- Static: What we see is what gets deployed, no surprises.
 - Minimal: Get rid of all the irrelevant bits.
 - Upstream: We don't want to have to reinvent existing deployments.
 - Fast: Do things in parallel.
 #+END_NOTES
 
-** ~kustom-tool~: approach
+** ~kustom-tool~ » approach
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 How did we go about building it?
 
 #+ATTR_REVEAL: :frag (t)
 - Find existing tools we can use
-  - ~kustomize~, ~ytt~, ~helm~, etc.
+  - ~kustomize~, ~helm~, ~ytt~, etc.
 - Glue those tools together
 - Build the missing pieces
 
-** ~kustom-tool~: design
+** ~kustom-tool~ » design
 
 Two stage operation:
 #+ATTR_REVEAL: :frag (t)
@@ -211,29 +247,33 @@ Two stage operation:
   - Only required when sources have changed
 - ~regenerate~: Build deployment manifests
   #+ATTR_REVEAL: :frag (t)
-  - Calls ~kustomize~ to build output
-  - ~kustomize~ plugin for ~ytt~
+  - Calls ~kustomize~ and ~ytt~ to build output
 
 #+BEGIN_NOTES
 - manifest, archive, git: Only fetch.
 - chart, kustomize: Call external tools.
 #+END_NOTES
 
-** ~kustom-tool~: implementation
+** ~kustom-tool~ » implementation
 
 #+ATTR_REVEAL: :frag (t)
 - Python (obviously)
 - ~trio~ for concurrency
 - ~mypy~ and ~ruff~ to find most of the bugs
-- 2-3 months (part time) to build
-- It's "just worked" for so long I forgot everything else
+- ~kustomize~ plugin to call ~ytt~
+- 2-4 months (part time) to build
+- It's "just worked" long enough that I forgot the rest
 
 #+BEGIN_NOTES
 - trio: Because it has a sensible concurrency model
 - ruff: Best linter available
+- kustomize: plugins are horrible
 #+END_NOTES
 
-** ~kustom-tool~: results
+** ~kustom-tool~ » results
+
+#+ATTR_HTML: :class heading
+How did it work out for us?
 
 #+ATTR_REVEAL: :frag (t)
 - Deploys take minutes to prepare instead of hours/days
@@ -244,34 +284,42 @@ Two stage operation:
 
 * ~filter_plan_2.py~
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Terraform plan filter
 
-** ~filter_plan_2.py~: problem
+** ~filter_plan_2.py~ » problem
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Why do we need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
-- 8 k8s clusters to upgrade
-- Upstream module update with *lots* of changes
-- 1k+ lines of terraform plan
+- Eight (or maybe ten?) k8s clusters to upgrade
+- Terraform module update with *lots* of changes
+- 1k+ lines of terraform plan output
 - 100+ affected resources
 - At least one resource that *must* be fixed
 
-** ~filter_plan_2.py~: sample input
+#+BEGIN_NOTES
+- Clusters: 4-6 hours each.
+- Module: Big refactor, they suggest recreating clusters.
+- Plan: Most of an hour to go through manually, missed things.
+- Fix: If missed, breaks the whole cluster.
+#+END_NOTES
+
+** ~filter_plan_2.py~ » sample input
 
 #+ATTR_REVEAL: :code_attribs data-line-numbers="11" data-ln-start-from="1234"
 #+INCLUDE: "./code/tf-plan-snippet.txt" src text
 
-** ~filter_plan_2.py~: design
+** ~filter_plan_2.py~ » design
 
-Meh, who has time to design something like this
+#+ATTR_HTML: :class heading
+Meh, who has time to design this
 
 #+ATTR_REVEAL: :frag t
 It's just a bunch of substring matches, right?
 
-** ~filter_plan_2.py~: implementation
+** ~filter_plan_2.py~ » implementation
 
 #+ATTR_REVEAL: :frag (t)
 - Basically just a bunch of substring matches
@@ -282,7 +330,10 @@ It's just a bunch of substring matches, right?
   - WARN: Things that need manual fixing
 - 200 lines of very hacky code, no tests, no repo
 
-** ~filter_plan_2.py~: results
+** ~filter_plan_2.py~ » results
+
+#+ATTR_HTML: :class heading
+How did it work out for us?
 
 #+ATTR_REVEAL: :frag (t)
 - No clusters were harmed during the upgrades
@@ -294,27 +345,44 @@ It's just a bunch of substring matches, right?
 
 * ~clothsim.py~
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Blender cloth simulation wrangler
 
-** ~clothsim.py~: problem
+** ~clothsim.py~ » problem
 
-#+ATTR_HTML: :style font-size: 150%;
+#+ATTR_HTML: :class heading
 Why do we need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
-- 8 k8s clusters to upgrade
-- Upstream module update with *lots* of changes
-- 1k+ lines of terraform plan
-- 100+ affected resources
-- At least one resource that *must* be fixed
+- I'm making a comic, which means lots of renders
+- Every panel needs cloth simulation:
+  #+ATTR_REVEAL: :frag (t)
+  - Animate from default pose to desired pose
+  - Save simulation results as shape keys
+  - Apply shape keys and clear simulation data
 
+** ~clothsim.py~ » implementation
 
-#+ATTR_HTML: :style font-size: 150%;
-Why do I need a tool for this?
+#+ATTR_REVEAL: :frag (t)
+- The same as the manual process, but automated
+- Blender's APIs are made of global mutable state
+  #+ATTR_REVEAL: :frag (t)
+  - ... because that's what 3d modelling is
+  - I still don't like it much, though
+- Very incomplete, but usable
 
-TODO
+** ~filter_plan_2.py~ » results
 
-** ~clothsim.py~: design
+#+ATTR_HTML: :class heading
+How did it work out for me?
 
+#+ATTR_REVEAL: :frag t
+Dunno yet, art time has been limited
+
+#+ATTR_REVEAL: :frag t
+Early results are promising, though
+
+* Conclusion
+
+#+ATTR_HTML: :class heading
 TODO

@@ -2,6 +2,8 @@
     --r-background-color: #002b36;
     --r-main-color: #93a1a1;
     --r-heading-color: #eee8d5;
+    --r-inline-code-color: #937476;
+    --r-block-code-color: #eee;
 }
 
 .v-center-container {
@@ -15,21 +17,43 @@
     /* background-color: red; */
 }
 
-pre code {
+.reveal code:not(.hljs) {
+    color: var(--r-inline-code-color);
+}
+
+.reveal h1 code,
+.reveal h2 code,
+.reveal h3 code,
+.reveal h4 code {
+    font-weight: bold;
+}
+
+.reveal .hljs {
+    background: #1a1a1a;
+    /* color: var(--r-block-code-color); */
     width: 110%;
     border-radius: 7px;
 }
 
-pre code.text {
+.reveal .hljs.text {
     font-size: 90%;
     line-height: 1;
+}
+
+.reveal .hljs.has-highlights tr:not(.highlight-line) {
+    opacity: .5;
+}
+
+.reveal p.heading {
+    font-size: 150%;
+    line-height: 2;
 }
 
 del {
     text-decoration-thickness: 3px;
 }
 
-ul li {
+.reveal ul li {
     margin-bottom: 10px;
 }
 

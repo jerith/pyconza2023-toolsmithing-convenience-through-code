@@ -18,8 +18,7 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide">
-<h1 class="title">Toolsmithing</h1>
+<section id="sec-title-slide"><h1 class="title">Toolsmithing</h1>
 <h3 class="subtitle">convenience through code</h3>
 <br/>
 <h2 class="author">Jeremy Thurgood</h2>
@@ -29,25 +28,30 @@
 
 
 <section>
-<section id="slide-org19331f4">
-<h2 id="org19331f4">What is toolsmithing?</h2>
+<section id="slide-org67ce136">
+<h2 id="org67ce136">What is a toolsmith?</h2>
 <div class="v-center-container">
-<p>
-TODO
+<p class="heading">
+A person who makes tools
+</p>
+
+<p class="fragment">
+More specifically, in the context of this presentation:<br />
+toolsmiths build tools to improve their own productivity,<br />
+and that of their friends and colleagues.
 </p>
 
 </div></section>
-<section id="slide-org0776f36">
-<h3 id="org0776f36">Why build tools?</h3>
+<section id="slide-org78b2bb7">
+<h3 id="org78b2bb7">Why build tools?</h3>
 <div class="v-center-container">
 <ul>
 <li class="fragment">Save time</li>
 <li class="fragment">Reduce complexity</li>
-<li class="fragment">TODO</li>
-<li class="fragment">It can be fun</li>
+<li class="fragment">Existing tools don't fit</li>
+<li class="fragment">It's fun</li>
 
 </ul>
-
 
 <aside class="notes">
 <p>
@@ -56,17 +60,15 @@ We'll go through each of these in more detail.
 
 </aside>
 
-
 </div>
 
-
 </section>
-<section id="slide-org4f03cba">
-<h3 id="org4f03cba">Save time</h3>
+<section id="slide-org461f935" data-transition="slide-in fade-out">
+<h3 id="org461f935">Save time</h3>
 <div class="v-center-container">
 
-<div id="org67736fc" class="figure">
-<p><img src="./img/is_it_worth_the_time_2x.png" alt="is_it_worth_the_time_2x.png" height="450px" align="center" />
+<div class="figure">
+<p><img src="./img/is_it_worth_the_time_2x.png" alt="is_it_worth_the_time_2x.png" height="500px" align="center" />
 </p>
 <p><span class="figure-number">Figure 1: </span><a href="https://xkcd.com/1205/">https://xkcd.com/1205/</a></p>
 </div>
@@ -78,17 +80,15 @@ Automation tools can save you some time. Here's a handy chart from XKCD to help 
 
 </aside>
 
-
 </div>
 
-
 </section>
-<section id="slide-org3fa996b">
-<h3 id="org3fa996b">Save time?</h3>
+<section id="slide-orgac59f75" data-transition="fade-in slide-out">
+<h3 id="orgac59f75">Save time?</h3>
 <div class="v-center-container">
 
-<div id="org11ec313" class="figure">
-<p><img src="./img/automation_2x.png" alt="automation_2x.png" height="450px" align="center" />
+<div class="figure">
+<p><img src="./img/automation_2x.png" alt="automation_2x.png" height="500px" align="center" />
 </p>
 <p><span class="figure-number">Figure 2: </span><a href="https://xkcd.com/1319/">https://xkcd.com/1319/</a></p>
 </div>
@@ -100,39 +100,62 @@ But of course, it's always more complicated.
 
 </aside>
 
-
 </div>
 
-
 </section>
-<section id="slide-org076aa30">
-<h3 id="org076aa30">Reduce complexity</h3>
+<section id="slide-orgf551df8">
+<h3 id="orgf551df8">Reduce complexity</h3>
 <div class="v-center-container">
+<p class="heading">
+Simple is better than complex
+</p>
+
 <ul>
-<li class="fragment">Get rid of boilerplate and defaults</li>
+<li class="fragment">Get rid of boilerplate</li>
 <li class="fragment">Focus on the things you care about</li>
-<li class="fragment">TODO?</li>
+<li class="fragment">Remove sources of error</li>
 
 </ul>
 
-
 <aside class="notes">
-<p>
-Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.
-Focus: Specify the things necessary for the app, let the robots do the rest.
-</p>
+<ul>
+<li>Boilerplate: I want to deploy an application, not write a thousand-line k8s manifest.</li>
+<li>Focus: Specify the things necessary for the app, let the robots do the rest.</li>
+<li>Errors: If you only need three parameters, don't expose the other seventeen.</li>
+
+</ul>
 
 </aside>
 
+</div>
+
+</section>
+<section id="slide-org897354c">
+<h3 id="org897354c">Existing tools</h3>
+<div class="v-center-container">
+<p class="heading">
+The world is full of tools
+</p>
+
+<p>
+Usually you can find one to meet your needs
+</p>
+
+<p class="fragment">
+Maybe you can get by with one that doesn't quite fit
+</p>
+
+<p class="fragment">
+Or you can build your own
+</p>
 
 </div>
 
-
 </section>
-<section id="slide-orgd063fc0">
-<h3 id="orgd063fc0">Fun</h3>
+<section id="slide-orgb4cfd83">
+<h3 id="orgb4cfd83">Fun</h3>
 <div class="v-center-container">
-<p>
+<p class="heading">
 Happy people are productive people
 </p>
 
@@ -151,9 +174,13 @@ Toolsmithing is creative work that replaces tedious repetition
 </section>
 </section>
 <section>
-<section id="slide-org3a5c98f">
-<h2 id="org3a5c98f">Examples</h2>
+<section id="slide-orga3cd2f2">
+<h2 id="orga3cd2f2">Examples</h2>
 <div class="v-center-container">
+<p class="heading">
+Some tools I've built recently
+</p>
+
 <ul>
 <li><code>bigterm.sh</code></li>
 <li><code>kustom-tool</code></li>
@@ -179,18 +206,18 @@ Toolsmithing is creative work that replaces tedious repetition
 </section>
 </section>
 <section>
-<section id="slide-orgf8d2c5c">
-<h2 id="orgf8d2c5c">Example: <code>bigterm.sh</code></h2>
+<section id="slide-orgbadf3ca">
+<h2 id="orgbadf3ca"><code>bigterm.sh</code></h2>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Makes my terminal big
 </p>
 
 </div></section>
-<section id="slide-org96cc507">
-<h3 id="org96cc507"><code>bigterm.sh</code> problem</h3>
+<section id="slide-org0adc142">
+<h3 id="org0adc142"><code>bigterm.sh</code> » problem</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Why do I need a tool for this?
 </p>
 
@@ -205,8 +232,8 @@ Why do I need a tool for this?
 </div>
 
 </section>
-<section id="slide-org09f634c">
-<h3 id="org09f634c"><code>bigterm.sh</code> implementation</h3>
+<section id="slide-org0828972">
+<h3 id="org0828972"><code>bigterm.sh</code> » implementation</h3>
 <div class="v-center-container">
 <p>
 Here's the code in its entirety:
@@ -224,35 +251,48 @@ printf '\e[3;200;0t'   # move to position (200, 0) pixels
 </div>
 
 <aside class="notes">
-<p>
-This took me about 20 minutes, 19 of which was finding and reading the relevant documentation.
-</p>
+<ul>
+<li>Took me about 20 minutes, 19 of which was finding and reading the relevant documentation.</li>
+<li>I didn't bother making it configurable or anything.</li>
 
-<p>
-I didn't bother making it configurable or anything.
-</p>
+</ul>
 
 </aside>
 
-
 </div>
 
+</section>
+<section id="slide-org7efe160">
+<h3 id="org7efe160"><code>bigterm.sh</code> » results</h3>
+<div class="v-center-container">
+<p class="heading">
+How did it work out for me?
+</p>
+
+<ul>
+<li class="fragment">I only ever notice it on computers that don't have it</li>
+<li class="fragment">Six point three bazillion context switches avoided</li>
+<li class="fragment">Paid for itself in happiness the first time I used it</li>
+
+</ul>
+
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-org976b7b6">
-<h2 id="org976b7b6">Example: <code>kustom-tool</code></h2>
+<section id="slide-org5091cd6">
+<h2 id="org5091cd6"><code>kustom-tool</code></h2>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Cluster configuration manager
 </p>
 
 </div></section>
-<section id="slide-org46e83ba">
-<h3 id="org46e83ba"><code>kustom-tool</code> problem</h3>
+<section id="slide-org3efeb87">
+<h3 id="org3efeb87"><code>kustom-tool</code> » problem</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Why do we need a tool for this?
 </p>
 
@@ -269,10 +309,10 @@ Why do we need a tool for this?
 </div>
 
 </section>
-<section id="slide-org1ce3f03">
-<h3 id="org1ce3f03"><code>kustom-tool</code> requirements</h3>
+<section id="slide-org9f70e6e">
+<h3 id="org9f70e6e"><code>kustom-tool</code> » requirements</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 What does this tool need to do?
 </p>
 
@@ -286,7 +326,7 @@ What does this tool need to do?
 
 <aside class="notes">
 <ul>
-<li>Static: What we see is what gets deployed.</li>
+<li>Static: What we see is what gets deployed, no surprises.</li>
 <li>Minimal: Get rid of all the irrelevant bits.</li>
 <li>Upstream: We don't want to have to reinvent existing deployments.</li>
 <li>Fast: Do things in parallel.</li>
@@ -298,17 +338,17 @@ What does this tool need to do?
 </div>
 
 </section>
-<section id="slide-org81553a0">
-<h3 id="org81553a0"><code>kustom-tool</code> approach</h3>
+<section id="slide-org076e29a">
+<h3 id="org076e29a"><code>kustom-tool</code> » approach</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 How did we go about building it?
 </p>
 
 <ul>
 <li class="fragment">Find existing tools we can use
 <ul>
-<li><code>kustomize</code>, <code>ytt</code>, <code>helm</code>, etc.</li>
+<li><code>kustomize</code>, <code>helm</code>, <code>ytt</code>, etc.</li>
 
 </ul></li>
 <li class="fragment">Glue those tools together</li>
@@ -319,8 +359,8 @@ How did we go about building it?
 </div>
 
 </section>
-<section id="slide-org0f48553">
-<h3 id="org0f48553"><code>kustom-tool</code> design</h3>
+<section id="slide-org114ea60">
+<h3 id="org114ea60"><code>kustom-tool</code> » design</h3>
 <div class="v-center-container">
 <p>
 Two stage operation:
@@ -335,8 +375,7 @@ Two stage operation:
 </ul></li>
 <li class="fragment"><code>regenerate</code>: Build deployment manifests
 <ul>
-<li class="fragment">Calls <code>kustomize</code> to build output</li>
-<li class="fragment"><code>kustomize</code> plugin for <code>ytt</code></li>
+<li class="fragment">Calls <code>kustomize</code> and <code>ytt</code> to build output</li>
 
 </ul></li>
 
@@ -354,15 +393,16 @@ Two stage operation:
 </div>
 
 </section>
-<section id="slide-orged04716">
-<h3 id="orged04716"><code>kustom-tool</code> implementation</h3>
+<section id="slide-org7dba505">
+<h3 id="org7dba505"><code>kustom-tool</code> » implementation</h3>
 <div class="v-center-container">
 <ul>
 <li class="fragment">Python (obviously)</li>
 <li class="fragment"><code>trio</code> for concurrency</li>
 <li class="fragment"><code>mypy</code> and <code>ruff</code> to find most of the bugs</li>
-<li class="fragment">2-3 months (part time) to build</li>
-<li class="fragment">It's "just worked" for so long I forgot everything else</li>
+<li class="fragment"><code>kustomize</code> plugin to call <code>ytt</code></li>
+<li class="fragment">2-4 months (part time) to build</li>
+<li class="fragment">It's "just worked" long enough that I forgot the rest</li>
 
 </ul>
 
@@ -370,6 +410,7 @@ Two stage operation:
 <ul>
 <li>trio: Because it has a sensible concurrency model</li>
 <li>ruff: Best linter available</li>
+<li>kustomize: plugins are horrible</li>
 
 </ul>
 
@@ -378,9 +419,13 @@ Two stage operation:
 </div>
 
 </section>
-<section id="slide-org1208222">
-<h3 id="org1208222"><code>kustom-tool</code> results</h3>
+<section id="slide-orga0bfd7d">
+<h3 id="orga0bfd7d"><code>kustom-tool</code> » results</h3>
 <div class="v-center-container">
+<p class="heading">
+How did it work out for us?
+</p>
+
 <ul>
 <li class="fragment">Deploys take minutes to prepare instead of hours/days</li>
 <li class="fragment">Dev teams do 90% of the deploys themselves</li>
@@ -396,35 +441,46 @@ Two stage operation:
 </section>
 </section>
 <section>
-<section id="slide-orgaa6c599">
-<h2 id="orgaa6c599">Example: <code>filter_plan_2.py</code></h2>
+<section id="slide-orga91e234">
+<h2 id="orga91e234"><code>filter_plan_2.py</code></h2>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Terraform plan filter
 </p>
 
 </div></section>
-<section id="slide-org0881c19">
-<h3 id="org0881c19"><code>filter_plan_2.py</code> problem</h3>
+<section id="slide-org46fc639">
+<h3 id="org46fc639"><code>filter_plan_2.py</code> » problem</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Why do we need a tool for this?
 </p>
 
 <ul>
-<li class="fragment">8 k8s clusters to upgrade</li>
-<li class="fragment">Upstream module update with <b>lots</b> of changes</li>
-<li class="fragment">1k+ lines of terraform plan</li>
+<li class="fragment">Eight (or maybe ten?) k8s clusters to upgrade</li>
+<li class="fragment">Terraform module update with <b>lots</b> of changes</li>
+<li class="fragment">1k+ lines of terraform plan output</li>
 <li class="fragment">100+ affected resources</li>
 <li class="fragment">At least one resource that <b>must</b> be fixed</li>
 
 </ul>
 
+<aside class="notes">
+<ul>
+<li>Clusters: 4-6 hours each.</li>
+<li>Module: Big refactor, they suggest recreating clusters.</li>
+<li>Plan: Most of an hour to go through manually, missed things.</li>
+<li>Fix: If missed, breaks the whole cluster.</li>
+
+</ul>
+
+</aside>
+
 </div>
 
 </section>
-<section id="slide-org7aac445">
-<h3 id="org7aac445"><code>filter_plan_2.py</code> sample input</h3>
+<section id="slide-org55cbcd4">
+<h3 id="org55cbcd4"><code>filter_plan_2.py</code> » sample input</h3>
 <div class="v-center-container">
 <div class="org-src-container">
 
@@ -450,11 +506,11 @@ Why do we need a tool for this?
 </div>
 
 </section>
-<section id="slide-org0887a9e">
-<h3 id="org0887a9e"><code>filter_plan_2.py</code> design</h3>
+<section id="slide-orgdc06f0f">
+<h3 id="orgdc06f0f"><code>filter_plan_2.py</code> » design</h3>
 <div class="v-center-container">
-<p>
-Meh, who has time to design something like this
+<p class="heading">
+Meh, who has time to design this
 </p>
 
 <p class="fragment">
@@ -464,8 +520,8 @@ It's just a bunch of substring matches, right?
 </div>
 
 </section>
-<section id="slide-orgd9a6db1">
-<h3 id="orgd9a6db1"><code>filter_plan_2.py</code> implementation</h3>
+<section id="slide-org236983c">
+<h3 id="org236983c"><code>filter_plan_2.py</code> » implementation</h3>
 <div class="v-center-container">
 <ul>
 <li class="fragment">Basically just a bunch of substring matches</li>
@@ -483,9 +539,13 @@ It's just a bunch of substring matches, right?
 </div>
 
 </section>
-<section id="slide-org9bad6e0">
-<h3 id="org9bad6e0"><code>filter_plan_2.py</code> results</h3>
+<section id="slide-org2711dd2">
+<h3 id="org2711dd2"><code>filter_plan_2.py</code> » results</h3>
 <div class="v-center-container">
+<p class="heading">
+How did it work out for us?
+</p>
+
 <ul>
 <li class="fragment">No clusters were harmed during the upgrades</li>
 <li class="fragment">(At least, not from anything related to this)</li>
@@ -505,46 +565,78 @@ It's just a bunch of substring matches, right?
 </section>
 </section>
 <section>
-<section id="slide-orgfdd7248">
-<h2 id="orgfdd7248">Example: <code>clothsim.py</code></h2>
+<section id="slide-org9538868">
+<h2 id="org9538868"><code>clothsim.py</code></h2>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Blender cloth simulation wrangler
 </p>
 
 </div></section>
-<section id="slide-org2ca3a8e">
-<h3 id="org2ca3a8e"><code>clothsim.py</code> problem</h3>
+<section id="slide-org03ad999">
+<h3 id="org03ad999"><code>clothsim.py</code> » problem</h3>
 <div class="v-center-container">
-<p style="font-size: 150%;">
+<p class="heading">
 Why do we need a tool for this?
 </p>
 
 <ul>
-<li class="fragment">8 k8s clusters to upgrade</li>
-<li class="fragment">Upstream module update with <b>lots</b> of changes</li>
-<li class="fragment">1k+ lines of terraform plan</li>
-<li class="fragment">100+ affected resources</li>
-<li class="fragment">At least one resource that <b>must</b> be fixed</li>
+<li class="fragment">I'm making a comic, which means lots of renders</li>
+<li class="fragment">Every panel needs cloth simulation:
+<ul>
+<li class="fragment">Animate from default pose to desired pose</li>
+<li class="fragment">Save simulation results as shape keys</li>
+<li class="fragment">Apply shape keys and clear simulation data</li>
+
+</ul></li>
 
 </ul>
 
+</div>
 
-<p style="font-size: 150%;">
-Why do I need a tool for this?
+</section>
+<section id="slide-orgce9e9be">
+<h3 id="orgce9e9be"><code>clothsim.py</code> » implementation</h3>
+<div class="v-center-container">
+<ul>
+<li class="fragment">The same as the manual process, but automated</li>
+<li class="fragment">Blender's APIs are made of global mutable state
+<ul>
+<li class="fragment">&#x2026; because that's what 3d modelling is</li>
+<li class="fragment">I still don't like it much, though</li>
+
+</ul></li>
+<li class="fragment">Very incomplete, but usable</li>
+
+</ul>
+
+</div>
+
+</section>
+<section id="slide-org54c476b">
+<h3 id="org54c476b"><code>filter_plan_2.py</code> » results</h3>
+<div class="v-center-container">
+<p class="heading">
+How did it work out for me?
 </p>
 
-<p>
-TODO
+<p class="fragment">
+Dunno yet, art time has been limited
+</p>
+
+<p class="fragment">
+Early results are promising, though
 </p>
 
 </div>
 
 </section>
-<section id="slide-orgd1a8687">
-<h3 id="orgd1a8687"><code>clothsim.py</code> design</h3>
+</section>
+<section>
+<section id="slide-orga507850">
+<h2 id="orga507850">Conclusion</h2>
 <div class="v-center-container">
-<p>
+<p class="heading">
 TODO
 </p>
 </div>
