@@ -432,7 +432,7 @@ What can we learn from this?
 Some tools will continue to evolve forever as requirements change
 
 #+ATTR_REVEAL: :frag t
-If you try hard enough, you can find a way to show off your artwork at a tech conference
+If you try hard enough, you can find a way to show off your artwork at a tech conference @@html:<br/><img src="./img/render-server-room.jpg" alt="render-server-room.jpg" class="fragment" height="200px" align="center" style="transform: translateY(-20px);" />@@
 
 
 * Conclusion » summary
@@ -440,10 +440,10 @@ If you try hard enough, you can find a way to show off your artwork at a tech co
 #+ATTR_HTML: :class heading
 What did we learn?
 
-- ~bigterm.sh~ » tiny shell script
-- ~kustom-tool~ » big cluster config manager
-- ~filter_plan_2.py~ » throwaway hack
-- ~clothsim.py~ » work in progress
+- ~bigterm.sh~ » a tiny tool can still be a big win
+- ~kustom-tool~ » it might be a core part of your infrastructure
+- ~filter_plan_2.py~ » value doesn't require longevity
+- ~clothsim.py~ » it's okay to change it every time you use it
 
 #+BEGIN_NOTES
 - ~bigterm.sh~: A tiny tool that solves a tiny problem for one person can still be a big win.
@@ -473,3 +473,9 @@ So, you want to start building tools...
 - Fail: Half the tools I've started building never went anywhere.
 - More than one way: My examples have all been very different. That's no accident.
 #+END_NOTES
+
+
+* That's all, folks
+
+#+ATTR_HTML: :class heading
+Questions?
