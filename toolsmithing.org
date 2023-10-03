@@ -144,10 +144,10 @@ Some tools I've built recently
 - ~clothsim.py~
 
 #+BEGIN_NOTES
-~bigterm.sh~: I promised you a tiny shell script.
-~kustom-tool~: I promised you a moderately complex cluster configuration manager.
-~filter_plan_2.py~: An ugly hack that saved us hours of downtime.
-~clothsim.py~: An art project.
+- ~bigterm.sh~: I promised you a tiny shell script.
+- ~kustom-tool~: I promised you a moderately complex cluster configuration manager.
+- ~filter_plan_2.py~: An ugly hack that saved us hours of downtime.
+- ~clothsim.py~: An art project.
 #+END_NOTES
 
 
@@ -188,6 +188,15 @@ How did it work out for me?
 - I only ever notice it on computers that don't have it
 - Six point three bazillion context switches avoided
 - Paid for itself in happiness the first time I used it
+
+** ~bigterm.sh~ » lessons
+
+#+ATTR_HTML: :class heading
+What can we learn from this?
+
+#+ATTR_REVEAL: :frag t
+A tiny tool that solves a tiny problem can still be a big win
+
 
 * ~kustom-tool~
 
@@ -281,6 +290,22 @@ How did it work out for us?
 - No YAML-related injuries since 2021
 - External tools make setup somewhat annoying
 
+** ~kustom-tool~ » lessons
+
+#+ATTR_HTML: :class heading
+What can we learn from this?
+
+#+ATTR_REVEAL: :frag t
+Sometimes the tool we build is essentially a production system and should be treated as such
+
+#+ATTR_REVEAL: :frag t
+Target audience matters, especially if it's more than just you
+
+#+BEGIN_NOTES
+- Production: That means tests, revision control, ongoing maintenance, etc.
+- Target audience: CLI is fine. Weird setup stuff isn't ideal.
+#+END_NOTES
+
 
 * ~filter_plan_2.py~
 
@@ -342,6 +367,22 @@ How did it work out for us?
   - Configuration was messy and difficult
   - Not worth the effort, make a new one next time
 
+** ~filter_plan_2.py~ » lessons
+
+#+ATTR_HTML: :class heading
+What can we learn from this?
+
+#+ATTR_REVEAL: :frag t
+A tool that you use once (or eight to ten times) and then throw away can still be valuable
+
+#+ATTR_REVEAL: :frag t
+A hacky prototype that gets the job done may be all you need
+
+#+BEGIN_NOTES
+- Production: That means tests, revision control, ongoing maintenance, etc.
+- Target audience: CLI is fine. Weird setup stuff isn't ideal.
+#+END_NOTES
+
 
 * ~clothsim.py~
 
@@ -351,7 +392,7 @@ Blender cloth simulation wrangler
 ** ~clothsim.py~ » problem
 
 #+ATTR_HTML: :class heading
-Why do we need a tool for this?
+Why do I need a tool for this?
 
 #+ATTR_REVEAL: :frag (t)
 - I'm making a comic, which means lots of renders
@@ -371,7 +412,7 @@ Why do we need a tool for this?
   - I still don't like it much, though
 - Very incomplete, but usable
 
-** ~filter_plan_2.py~ » results
+** ~clothsim.py~ » results
 
 #+ATTR_HTML: :class heading
 How did it work out for me?
@@ -382,7 +423,53 @@ Dunno yet, art time has been limited
 #+ATTR_REVEAL: :frag t
 Early results are promising, though
 
-* Conclusion
+** ~clothsim.py~ » lessons
 
 #+ATTR_HTML: :class heading
-TODO
+What can we learn from this?
+
+#+ATTR_REVEAL: :frag t
+Some tools will continue to evolve forever as requirements change
+
+#+ATTR_REVEAL: :frag t
+If you try hard enough, you can find a way to show off your artwork at a tech conference
+
+
+* Conclusion » summary
+
+#+ATTR_HTML: :class heading
+What did we learn?
+
+- ~bigterm.sh~ » tiny shell script
+- ~kustom-tool~ » big cluster config manager
+- ~filter_plan_2.py~ » throwaway hack
+- ~clothsim.py~ » work in progress
+
+#+BEGIN_NOTES
+- ~bigterm.sh~: A tiny tool that solves a tiny problem for one person can still be a big win.
+- ~kustom-tool~: A core part of our infrastructure.
+- ~filter_plan_2.py~: Use once, throw away.
+- ~clothsim.py~: Ever-evolving.
+#+END_NOTES
+
+** Conclusion » thoughts and advice
+
+#+ATTR_HTML: :class heading
+So, you want to start building tools...
+
+#+ATTR_REVEAL: :frag (t)
+- Don't be afraid to try
+  #+ATTR_REVEAL: :frag t
+  - You'll almost certainly learn something, at least
+- Don't be afraid to fail
+  #+ATTR_REVEAL: :frag t
+  - Sometimes it's not worth the effort, and that's okay
+- There's more than one way to do it
+  #+ATTR_REVEAL: :frag t
+  - Pick the one that fits the problem you're solving
+
+#+BEGIN_NOTES
+- Try: The cost of a quick hack is small.
+- Fail: Half the tools I've started building never went anywhere.
+- More than one way: My examples have all been very different. That's no accident.
+#+END_NOTES
