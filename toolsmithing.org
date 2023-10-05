@@ -402,6 +402,24 @@ Why do I need a tool for this?
   - Save simulation results as shape keys
   - Apply shape keys and clear simulation data
 
+** ~clothsim.py~ » art (unsimulated)
+:PROPERTIES:
+:REVEAL_DATA_TRANSITION: slide-in fade-out
+:END:
+
+#+CAPTION: Unsimulated
+#+ATTR_HTML: :height 500px :align center
+[[./img/p1p7-sketch1-nosim.png]]
+
+** ~clothsim.py~ » art (simulated)
+:PROPERTIES:
+:REVEAL_DATA_TRANSITION: fade-in slide-out
+:END:
+
+#+CAPTION: Simulated
+#+ATTR_HTML: :height 500px :align center
+[[./img/p1p7-sketch1.png]]
+
 ** ~clothsim.py~ » implementation
 
 #+ATTR_REVEAL: :frag (t)
