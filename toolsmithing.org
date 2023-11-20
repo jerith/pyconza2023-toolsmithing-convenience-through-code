@@ -3,7 +3,7 @@
 #+EXPORT_FILE_NAME: index.html
 
 # Set this for a standalone hosted version.
-# #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@4.6.0
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@4.6.0
 #+REVEAL_REVEAL_JS_VERSION: 4
 #+REVEAL_PLUGINS: (highlight notes)
 #+REVEAL_THEME: night
